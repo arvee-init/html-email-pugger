@@ -1,17 +1,21 @@
 doctype html
 html
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Welcome to my example email
-    style.
-        !{cssContent}
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title Welcome to my example email
+        style.
+            !{cssContent}
     body
         table.container
             tr
                 td.content
-                    h1 Welcome to my email
+                    h1 Welcome {{customer.name}},
                     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed est ac nunc mollis cursus. Phasellus bibendum gravida ante, vitae tincidunt tortor luctus vel. Sed efficitur tellus libero, sit amet sollicitudin ex pulvinar eget. Quisque pellentesque orci eu libero rhoncus interdum. Suspendisse potenti. Donec elementum dignissim mi vel lacinia. Sed in semper diam, sed suscipit odio. Suspendisse potenti.
                     p Nulla vel orci eget velit fringilla maximus. Aliquam euismod orci a risus eleifend dignissim. Curabitur ac ligula a nulla suscipit congue. Sed sit amet massa a erat hendrerit lobortis. In tristique arcu ac lobortis molestie. Vivamus sed ante non arcu vehicula blandit. Vivamus maximus, dolor nec tristique consectetur, odio arcu sollicitudin dolor, ac bibendum ipsum augue id purus.
                     p Phasellus pretium tellus et velit bibendum, nec consectetur nisl pharetra. Pellentesque bibendum eget nulla non consequat. Ut nec ex vel tortor volutpat pellentesque. Fusce quis lorem eget metus malesuada tincidunt nec sed libero. Nulla facilisi. Suspendisse sit amet faucibus turpis. Integer sit amet elit et elit fringilla efficitur.
+            tr
+                td.content
+                    p Setup ticket: {{setup.ticket}} 
+                    p Appointment processed_date: {{appointment.processed_date}}

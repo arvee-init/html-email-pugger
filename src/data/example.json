@@ -1,0 +1,11 @@
+{
+    "customer": {
+        "name": "John Doe"
+    },
+    "setup": {
+        "ticket": "ABC-123"
+    },
+    "appointment": {
+        "processed_date": "2023-04-16"
+    }
+}

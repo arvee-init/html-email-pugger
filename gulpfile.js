@@ -89,8 +89,22 @@ function compilePug(done) {
     ).then(() => done());
 }
 
-  function compileIndexPug() {
-    const templates = fs.readdirSync('src/templates').filter(file => path.extname(file) === '.pug');
+function compileIndexPug() {
+    const templates = fs.readdirSync('src/templates').filter(file => path.extname(file) === '.pug').map(file => {
+      const fileName = file.replace('.pug', '');
+      const fileStats = fs.statSync(`src/templates/${file}`);
+      const creationDate = fileStats.birthtime.toISOString().split('T')[0];
+      const hasCss = fs.existsSync(`src/styles/${fileName}.scss`);
+      const hasData = fs.existsSync(`src/data/${fileName}.json`);
+  
+      return {
+        name: fileName,
+        fileDateCreation: creationDate,
+        hasCss,
+        hasData,
+      };
+    });
+  
     const useJsonData = true; // Set this to false to keep variables in the HTML
   
     // Load JSON data
@@ -101,6 +115,7 @@ function compilePug(done) {
       .pipe(dest(`${outputDir}`))
       .pipe(browserSync.stream());
   }
+  
   
 
 function serve(done) {

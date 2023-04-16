@@ -1,0 +1,21 @@
+{
+    "name": "html-email-pugger",
+    "version": "0.0.1",
+    "description": "HTML email pugged",
+    "author": "Ruben <ruben@poap.io>",
+    "license": "MIT",
+    "main": "index.js",
+    "scripts": {
+        "start": "gulp"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.29.1",
+        "gulp": "^4.0.2",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-connect": "^5.7.0",
+        "gulp-inline-css": "^4.0.0",
+        "gulp-pug": "^5.0.0",
+        "gulp-sass": "^5.1.0",
+        "sass": "^1.62.0"
+    }
+}
